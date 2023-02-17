@@ -1,11 +1,11 @@
 <?php
 
-namespace Outl1ne\MultiselectField;
+namespace Workup\Nova\MultiselectField;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\ServiceProvider;
-use Outl1ne\NovaTranslationsLoader\LoadsNovaTranslations;
+use Workup\Nova\NovaTranslationsLoader\LoadsNovaTranslations;
 
 class FieldServiceProvider extends ServiceProvider
 {

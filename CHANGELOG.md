@@ -136,7 +136,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Please rename `optimistdigital/nova-multiselect-field` to `outl1ne/nova-multiselect-field` in `composer.json`, use version `^4.0` and run `composer update`.
 
-Then change `use OptimistDigital\MultiselectField\Multiselect` to `use Outl1ne\MultiselectField\Multiselect`. Thanks!
+Then change `use OptimistDigital\MultiselectField\Multiselect` to `use Workup\Nova\MultiselectField\Multiselect`. Thanks!
 
 ### Changed
 
