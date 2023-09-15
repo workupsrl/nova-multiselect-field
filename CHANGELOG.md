@@ -200,7 +200,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Use Outl1ne translations loader 5.0
+- Use workup translations loader 5.0
 - Re-add support for Laravel 8.0 and PHP 8.0
 
 ## [4.0.0] - 22-04-2022

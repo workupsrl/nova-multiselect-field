@@ -1,7 +1,7 @@
 <template>
   <DefaultField :field="currentField" :showHelpText="showHelpText" :errors="errors">
     <template #field>
-      <div class="outl1ne-multiselect-field flex flex-col">
+      <div class="workup-multiselect-field flex flex-col">
         <!-- Multi select field -->
         <multiselect
           v-if="!reorderMode"
@@ -422,7 +422,7 @@ $slate1000: #070a13;
 $red400: #f87171;
 $red500: #ef4444;
 
-.outl1ne-multiselect-field {
+.workup-multiselect-field {
   .multiselect {
     min-height: 36px;
     border: none;
