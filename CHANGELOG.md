@@ -5,6 +5,79 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.4.2] - 25-08-2023
+
+### Changed
+
+- Fixed a bug with fillIfVisible (thanks to [@LorenzoAlu](https://github.com/LorenzoAlu) and [@muhammadsaeedparacha](https://github.com/muhammadsaeedparacha))
+
+## [4.4.1] - 10-08-2023
+
+### Changed
+
+- Fixed crash with empty belongsToMany
+
+## [4.4.0] - 10-08-2023
+
+### Changed
+
+- Bumped minimum Nova version to 4.27 due to inner method visibility change inside Nova
+- Fixed resolveDefaultValue visibility
+- Fixed a bug when using show() and hide() inside dependsOn (thanks to [@LorenzoAlu](https://github.com/LorenzoAlu))
+- Fixed fillIfVisible running even when the field was not visible (thanks to [@puzzledmonkey](https://github.com/puzzledmonkey))
+
+## [4.3.6] - 24-07-2023
+
+### Changed
+
+- Improved .gitattributes to reduce vendor size
+
+## [4.3.5] - 30-06-2023
+
+### Changed
+
+- Fixed issue with Laravel Octane observer leaks
+- Fixed issue with some null default values
+
+## [4.3.4] - 13-06-2023
+
+### Changed
+
+- Fixed Nova 4.25 support (UndefinedValue class as new default value)
+
+## [4.3.3] - 31-05-2023
+
+### Changed
+
+- Fixed dependsOn changes not propagating further than one layer down
+
+## [4.3.2] - 30-05-2023
+
+### Changed
+
+- Fixed unintended crash with null defaultValue
+
+## [4.3.1] - 30-05-2023
+
+### Changed
+
+- Fixed unnecessary group labels on form view
+
+## [4.3.0] - 29-05-2023
+
+### Added
+
+- Added BelongsToMany default() support
+  - Default value should be a model or an array/collection of models
+- Added Slovak language (thanks to [@wamesro](https://github.com/wamesro))
+
+### Changed
+
+- Fixed dependsOnOptions changes not propagating further than one layer down
+- Fixed PHP arrow fn usage (thanks to [@Alvaro-Vidal-Azevedo-Pinheiro](https://github.com/Alvaro-Vidal-Azevedo-Pinheiro))
+- Fixed attribute usage when filling field (thanks to [@lonnylot](https://github.com/lonnylot))
+- Updated packages
+
 ## [4.2.3] - 23-11-2022
 
 ### Changed

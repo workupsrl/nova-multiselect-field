@@ -30,6 +30,7 @@
           :loading="isLoading"
           selectGroupLabel=""
           selectedLabel=""
+          tagPlaceholder=""
           deselectLabel=""
           deselectGroupLabel=""
           :clearOnSelect="currentField.clearOnSelect || false"
@@ -102,7 +103,7 @@ export default {
 
   mixins: [HandlesValidationErrors, HandlesFieldValue, DependentFormField],
 
-  props: ['resourceName', 'resourceId', 'field'],
+  props: ['resourceName', 'resourceId', 'field', 'mode'],
 
   data: () => ({
     reorderMode: false,
@@ -161,6 +162,9 @@ export default {
           });
           this.max = Math.max(...maxValues) || null;
         }
+
+        // Emit new value so fields down the line also get refreshed
+        Nova.$emit(`multiselect-${this.field.attribute}-input`, this.value);
       });
     }
 
@@ -212,19 +216,24 @@ export default {
       } else {
         this.value = this.getValueFromOptions(this.currentField.value);
       }
+
+      // Emit new value so fields down the line also get refreshed
+      this.currentField.value = !this.value ? '' : this.isMultiselect ? this.value.map(v => v.value) : this.value.value;
     },
 
-    fillIfVisible(formData) {
+    fillIfVisible(formData, attribute) {
+      if (!this.currentlyIsVisible) return;
+
       if (this.isMultiselect) {
         if (this.value && this.value.length) {
           this.value.forEach((v, i) => {
-            formData.append(`${this.field.attribute}[${i}]`, v.value);
+            formData.append(`${attribute}[${i}]`, v.value);
           });
         } else {
-          formData.append(this.field.attribute, '');
+          formData.append(attribute, '');
         }
       } else {
-        formData.append(this.field.attribute, (this.value && this.value.value) || '');
+        formData.append(attribute, (this.value && this.value.value) || '');
       }
     },
 
@@ -599,7 +608,7 @@ $red500: #ef4444;
           }
         }
 
-        &.multiselect__option--group  {
+        &.multiselect__option--group {
           color: rgba(var(--colors-primary-500));
           background-color: $white;
 
